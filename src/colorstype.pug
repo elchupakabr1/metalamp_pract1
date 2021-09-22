@@ -1,0 +1,64 @@
+extends ./pug/base
+include ./pug/mixin
+block style
+	style include src("css/main.css")
+	style(type="text/css") *{ background-color: #ffffff; }
+block content
+	div.fonts
+		div.Group__colors
+			div.color100
+			div.darkshade100
+				b Dark Shade 100%
+				br
+				| #1f2041
+			div.color75
+			div.darkshade75
+				b Dark Shade 75%
+				br
+				| #1f2041
+			div.color50
+			div.darkshade50
+				b Dark Shade 50%
+				br
+				| #1f2041
+			div.color25
+			div.darkshade25
+				b Dark Shade 25%
+				br
+				| #1f2041
+			div.color5
+			div.darkshade5
+				b Dark Shade 5%
+				br
+				| #1f2041
+			div.colorpurple
+			div.purple
+				b Purple
+				br
+				| #bc9cff
+			div.colorgreen
+			div.green
+				b Green
+				br
+				| #6fcf97
+		div.Group__text
+			div.h1__label 
+				h1 H1
+			div.h1__text
+				h1
+					|	This one is the sub-section or widget title
+			div.h2__label
+				h2 H2
+			div.h2__text
+				h2
+					|	Next one is the item title inside widgets
+			div.h3__label
+				h3 H3
+			div.h3__text
+				h3
+					|	This is a label or CTA text
+			div.body__label
+				p Body
+			div.body__text
+				p
+					| This is the body text which is used for most of the design, like paragraphs, lists, etc.

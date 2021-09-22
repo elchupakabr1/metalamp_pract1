@@ -1,0 +1,16 @@
+extends ./pug/base
+include ./pug/mixin
+block content
+
+  .block.
+    
+  .card
+  +buttonOrder('lolkek','id_1')
+  +textfield('Поиск...','search__field')
+  +subscriptiontextfield('','email__field')
+  +adultchild(adults_id)
+  +sex
+  +rating()
+  +date_dropown_double()
+  p
+    a(href='colorstype.html') Colors & Type

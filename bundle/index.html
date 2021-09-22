@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><style>include src("css/main.css")</style><script>import '../scss/main.scss'
+const dropmenu = require('./scripts.js');
+
+/*const config = {
+  pug: {
+    locals: {
+      dropmenu,
+    },
+  },
+};*/</script><script defer="defer" src="./js/bundle.js"></script><link href="./css/main.css" rel="stylesheet"></head><body><div class="block"></div><div class="card"></div><input class="btn" type="button" value="lolkek" id="id_1"> <input class="textfield" type="text" placeholder="Поиск..." id="textfield__id"> <input class="textfield" type: email placeholder="example@email.com" id="subscriptiontextfield__id"><script>function func() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown menu if the user clicks outside of it
+/*window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+} */
+//const $=require('jquery')
+/*$( function() {
+    $('#slider-range').slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $('#amount').val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $('#amount').val( "$" + $('#slider-range').slider('values', 0 ) +
+      " - $" + $('#slider-range').slider( 'values', 1 ) );
+  } );*/
+
+ /* $( ".slider" ).slider({
+  range: true,
+  min: 1000,
+  max: 500000,
+  values: [ 1000, 50000, ]
+});*/
+var numCount_adult = document.getElementById('num_count_adult');
+var plusBtn_adult = document.getElementById('button_plus_adult');
+var minusBtn_adult = document.getElementById('button_minus_adult');
+plusBtn_adult.onclick = function() {
+  var qty_adult = parseInt(numCount_adult.value);
+  qty_adult = qty_adult + 1;
+  if (qty_adult>10) qty_adult=10;
+  numCount_adult.value = qty_adult;
+}
+minusBtn_adult.onclick = function() {
+  var qty_adult = parseInt(numCount_adult.value);
+  qty_adult = qty_adult - 1;
+  if (qty_adult<0) qty_adult=0;
+  numCount_adult.value = qty_adult;
+}
+var numCount_child = document.getElementById('num_count_child');
+var plusBtn_child = document.getElementById('button_plus_child');
+var minusBtn_child = document.getElementById('button_minus_child');
+plusBtn_child.onclick = function() {
+  var qty_child = parseInt(numCount_child.value);
+  qty_child = qty_child + 1;
+  if (qty_child>10) qty_child=10;
+  numCount_child.value = qty_child;
+}
+minusBtn_child.onclick = function() {
+  var qty_child = parseInt(numCount_child.value);
+  qty_child = qty_child - 1;
+  if (qty_child<0) qty_child=0;
+  numCount_child.value = qty_child;
+}
+
+var numCount_baby = document.getElementById('num_count_baby');
+var plusBtn_baby = document.getElementById('button_plus_baby');
+var minusBtn_baby = document.getElementById('button_minus_baby');
+plusBtn_baby.onclick = function() {
+  var qty_baby = parseInt(numCount_baby.value);
+  qty_baby = qty_baby + 1;
+  if (qty_baby>10) qty_baby=10;
+  numCount_baby.value = qty_baby;
+}
+minusBtn_baby.onclick = function() {
+  var qty_baby = parseInt(numCount_baby.value);
+  qty_baby = qty_baby - 1;
+  if (qty_baby<0) qty_baby=0;
+  numCount_baby.value = qty_baby;
+}</script><form>Options<div id="adult_child_id"><p><!--div--> <input class="checkboxes" type="checkbox" id="option1" name="option_1"> <label for="option1"><checkbox__name></checkbox__name><!--=checkbox__name--></label><span>Option 1</span></p></div><div><!--div--> <input class="checkboxes" type="checkbox" id="option2" name="option_2"> <label for="option2"><checkbox__name></checkbox__name><!--=checkbox__name--></label><span>Option 2</span></div></form><div class="dropdown"><button class="dropbtn" onclick="func()" label="Dropdown">Dropdown</button><div class="dropdown-content" id="myDropdown"><div><p>Взрослые</p><div class="input-group quantity_goods"><input class="button_minus" type="button" value="-" id="button_minus_adult"> <input class="number-text" type="number" step="1" min="1" max="10" id="num_count_adult" name="quantity" value="1" title="Взрослые"> <input class="button_plus" type="button" value="+" id="button_plus_adult"></div><p></p><p>Дети</p><div class="input-group quantity_goods"><input class="button_minus" type="button" value="-" id="button_minus_child"> <input class="number-text" type="number" step="1" min="1" max="10" id="num_count_child" name="quantity" value="1" title="Дети"> <input class="button_plus" type="button" value="+" id="button_plus_child"></div><p></p><p>Младенцы</p><div class="input-group quantity_goods"><input class="button_minus" type="button" value="-" id="button_minus_baby"> <input class="number-text" type="number" step="1" min="1" max="10" id="num_count_baby" name="quantity" value="1" title="Младенцы"> <input class="button_plus" type="button" value="+" id="button_plus_baby"></div><p></p></div></div></div><form id="radio__id"><div><p><input class="radiobutton" type="radio" id="m" name="sex" checked="checked"><span>Male </span><input class="radiobutton" type="radio" id="f" name="sex"><span>Female</span></p></div></form><div class="rating-area"><input class="rate" type="radio" name="rating" id="rate1" value="1" checked="checked"> <label for="rate1"></label> <input class="rate" type="radio" name="rating" id="rate2" value="2" checked="checked"> <label for="rate2"></label> <input class="rate" type="radio" name="rating" id="rate3" value="3" checked="checked"> <label for="rate3"></label> <input class="rate" type="radio" name="rating" id="rate4" value="4" checked="checked"> <label for="rate4"></label> <input class="rate" type="radio" name="rating" id="rate5" value="5" checked="checked"> <label for="rate5"></label></div><div class="date__interval"><!--span(class="date__text") Start date--> <input class="textfield datefield" type="date" id="datedropdown__id" placeholder="date_label"> <label for="datedropdown__id">Start date</label> <input class="textfield datefield" type="date" id="datedropdown__id" placeholder="date_label"> <label for="datedropdown__id">end date</label></div><!--div.date__interval
+    //span(class="date__text") End date
+    +datedropdown(end_date,'end date')
+    --><p><a href="colorstype.html">Colors & Type</a></p></body></html>

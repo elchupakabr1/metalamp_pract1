@@ -1,0 +1,125 @@
+mixin buttonOrder(button__title,butt0n__id)
+  input(
+  type ='button'
+  class='btn'
+  value=button__title
+  id=butt0n__id
+  )
+
+
+mixin textfield(textfield__title,textfield__id)
+  input(
+    type='text'
+    class='textfield'
+    placeholder=textfield__title
+    id='textfield__id'
+  )
+  mixin maskedtextfield(maskedtextfield__id)
+    input(
+      type='date'
+      placeholder='ДД.ММ.ГГГГ'
+      class='textfield'
+      id='maskedtextfield__id'
+      )
+  mixin subscriptiontextfield(subscriptiontextfield__id)
+    input(
+    type: 'email'
+    placeholder='example@email.com'
+    class='textfield'
+    id='subscriptiontextfield__id'
+    )
+  mixin datedropdown(datedropdown__id,date_label)
+    input(
+      type='date'
+      class='textfield datefield'
+      id='datedropdown__id'
+      placeholder='date_label'
+      )
+    label(for='datedropdown__id') 
+      | !{date_label}
+    
+  mixin checkboxbutton(checkbox__id,checkbox__name)
+    //div
+    input(
+        type='checkbox'
+        class= 'checkboxes'
+        id=checkbox__id
+        name=checkbox__name)
+    label(for=checkbox__id)
+      checkbox__name
+      //=checkbox__name
+  mixin sex(radio__id)
+    form(id='radio__id')
+      div
+        p 
+          input(
+            type='radio'
+            class='radiobutton'
+            id='m'
+            name='sex'
+            checked)
+          span Male 
+          input(
+            type='radio'
+            class='radiobutton'
+            id='f'
+            name='sex')
+          span Female
+mixin rating()
+  div(class='rating-area')
+    input(type='radio' name='rating' class='rate' id='rate1' value="1" checked)
+    label(for='rate1')
+    input(type='radio' name='rating' class='rate' id='rate2' value="2" checked)
+    label(for='rate2')
+    input(type='radio' name='rating' class='rate' id='rate3' value="3" checked)
+    label(for='rate3')
+    input(type='radio' name='rating' class='rate' id='rate4' value="4" checked)
+    label(for='rate4')
+    input(type='radio' name='rating' class='rate' id='rate5' value="5" checked)
+    label(for='rate5')
+mixin range-slider()
+   div(class='slider')
+mixin adults()
+  div.input-group.quantity_goods
+      input(type="button" value="-" id="button_minus_adult" class="button_minus")
+      input(type="number" step="1" min="1" max="10" id="num_count_adult" name="quantity" class="number-text" value="1" title="Взрослые")
+      input(type="button" value="+" id="button_plus_adult" class="button_plus")
+mixin childs()
+  div.input-group.quantity_goods
+    input(type="button" value="-" id="button_minus_child" class="button_minus")
+    input(type="number" step="1" min="1" max="10" id="num_count_child" name="quantity" class="number-text" value="1" title="Дети")
+    input(type="button" value="+" id="button_plus_child" class="button_plus")
+mixin babys(option_name,option_id)
+  div.input-group.quantity_goods
+    input(type="button" value="-" id="button_minus_baby" class="button_minus")
+    input(type="number" step="1" min="1" max="10" id="num_count_baby" name="quantity" class="number-text" value="1" title="Младенцы")
+    input(type="button" value="+" id="button_plus_baby" class="button_plus")
+mixin adultchild(adult_child_id)
+  script
+    include ../js/scripts.js
+  form Options 
+    div(id='adult_child_id')
+      p
+        +checkboxbutton('option1','option_1')
+        span Option 1
+    div
+      +checkboxbutton('option2','option_2')
+      span Option 2
+  div(class="dropdown")
+    button(onclick='func()' class="dropbtn" label="Dropdown") Dropdown
+    div(id="myDropdown" class="dropdown-content")
+      div
+        p Взрослые
+          +adults()
+        p Дети
+          +childs()
+        p Младенцы
+          +babys()
+mixin date_dropown_double()
+  div.date__interval
+    //span(class="date__text") Start date
+    +datedropdown(start_date,'Start date')
+    +datedropdown(end_date,'end date')
+  //div.date__interval
+    //span(class="date__text") End date
+    +datedropdown(end_date,'end date')
